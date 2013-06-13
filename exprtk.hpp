@@ -1928,6 +1928,7 @@ namespace exprtk
          virtual void reset()                    {               }
          virtual bool result()                   { return true;  }
          virtual std::size_t process(generator&) { return 0;     }
+         virtual ~helper_interface()             {               }
       };
 
       class token_scanner : public helper_interface

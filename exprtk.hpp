@@ -11256,7 +11256,6 @@ namespace exprtk
       {
          const std::string symbol = current_token_.value;
          expression_node_ptr result = symbol_table_.get_stringvar(symbol);
-         bool string_literal = false;
 
          if (symbol_name_caching_)
          {
@@ -11265,7 +11264,6 @@ namespace exprtk
          if (symbol_table_.is_constant_node(symbol))
          {
             result = expression_generator_(dynamic_cast<details::string_literal_node<T>*>(result)->str());
-            string_literal = true;
          }
 
          if (peek_token_is(token_t::e_lsqrbracket))
